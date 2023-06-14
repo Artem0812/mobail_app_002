@@ -1,0 +1,702 @@
+
+<Entrance>:
+    button:button
+    button2:button2
+    padding:5
+    Image:
+        source: 'космос.webp'
+        size_hint_x: 3.4
+        size_hint_y: 1.3
+        allow_stretch: 2
+        pos: -10, -10
+    FloatLayout:
+        pos_hint: {'center_x': 0.5, 'center_y': 0.705}
+        size_hint_y: 0.7
+        Button:
+            id: button
+            text: "Регистрация"
+            pos: 120, 600
+            size_hint: 0.5, 0.13
+            background_normal: '' # Опустошаем нормальное изображение фона
+            background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            border_color: (0, 0, 0, 1) # Задание цвета границы
+            on_press: root.first_main()
+        Button:
+            id: button2
+            text: "Вход"
+            pos: 120, 300
+            size_hint: 0.5, 0.13
+            background_normal: '' # Опустошаем нормальное изображение фона
+            background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            border_color: (0, 0, 0, 1) # Задание цвета границы
+            on_press: root.Auth()
+
+<Authorization>:
+    but:but
+    nam:nam
+    passwd:passwd
+    label:label
+
+    padding:5
+
+    Image:
+        source: 'космос.webp'
+        anim_delay:
+        size_hint_x: 3.5
+        size_hint_y: 1.3
+        allow_stretch: 2
+        pos: -600, 1
+
+
+    FloatLayout:
+        pos_hint: {'center_x': 0.5, 'center_y': 0.705}
+        size_hint_y: 0.7
+
+
+
+        Button:
+
+            id: but
+            text: "Продолжить"
+            background_normal: '' # Опустошаем нормальное изображение фона
+            background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            border_color: (0, 0, 0, 1) # Задание цвета границы
+            size_hint: 1, 0.15
+            on_press: root.ladel_function_text()
+#
+
+    Label:
+        id: label_text
+        text: "Авторизация"
+        pos: 5, 670
+        color: 173, 207, 139
+        size_hint: 1, 0.15
+        font_size: 24
+
+    Label:
+        id: label
+        text: ""
+        pos: 30, 430
+        color: 173, 207, 139
+        size_hint: 1, 0.15
+        font_size: 24
+
+    FloatLayout:
+
+        GridLayout:
+            cols: 2
+            font_size: 24
+            row_default_height: '50dp'
+            row_force_default: True
+            size_hint: 0.7, 0.5
+            pos: 50, 220
+            text_size: 24
+
+
+
+
+
+            Label:
+                text: "Name: "
+                size_hint: 0, 0.5
+                color: 173, 207, 139
+                font_size: 24
+
+
+
+            TextInput:
+                id: nam
+                multiline: False
+                size_hint_x: 0.1
+
+
+
+            Label:
+                text: "Password: "
+                size_hint_x: None
+                color: 173, 207, 139
+                font_size: 24
+
+
+            TextInput:
+                id: passwd
+                password: True
+                multiline: False
+                size_hint_x: 0.1
+
+<Registration>:
+    but:but
+    nam:nam
+    passwd:passwd
+    label:label
+
+    padding:5
+
+    Image:
+        source: 'космос.webp'
+        anim_delay:
+        size_hint_x: 3.5
+        size_hint_y: 1.3
+        allow_stretch: 2
+        pos: -600, 1
+
+
+    FloatLayout:
+        pos_hint: {'center_x': 0.5, 'center_y': 0.705}
+        size_hint_y: 0.7
+
+
+
+        Button:
+
+            id: but
+            text: "Продолжить"
+            size_hint: 1, 0.15
+            background_normal: '' # Опустошаем нормальное изображение фона
+            background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            on_press: root.entr()
+#
+
+    Label:
+        id: label_text
+        text: "Регистрация"
+        pos: 5, 670
+        color: 173, 207, 139
+        size_hint: 1, 0.15
+        font_size: 24
+
+    Label:
+        id: label
+        text: ""
+        pos: 30, 430
+        color: 173, 207, 139
+        size_hint: 1, 0.15
+        font_size: 24
+
+    FloatLayout:
+
+        GridLayout:
+            cols: 2
+            font_size: 24
+            row_default_height: '50dp'
+            row_force_default: True
+            size_hint: 0.7, 0.5
+            pos: 50, 220
+            text_size: 24
+
+
+
+
+
+            Label:
+                text: "Name: "
+                size_hint: 0, 0.5
+                color: 173, 207, 139
+                font_size: 24
+
+
+
+            TextInput:
+                id: nam
+                multiline: False
+                size_hint_x: 0.1
+
+
+
+            Label:
+                text: "Password: "
+                size_hint_x: None
+                color: 173, 207, 139
+                font_size: 24
+
+
+            TextInput:
+                id: passwd
+                password: True
+                multiline: False
+                size_hint_x: 0.1
+
+
+<Test>:
+    but_next:but_next
+    but1:but1
+    but2:but2
+
+    Image:
+        source: 'космос.webp'
+        anim_delay:
+        size_hint_x: 3.5
+        size_hint_y: 1.3
+        allow_stretch: 2
+        pos: -600, 1
+
+
+    FloatLayout:
+        pos_hint: {'center_x': 0.5, 'center_y': 0.705}
+        size_hint_y: 0.7
+        text_size: 24
+
+        Label:
+            text: "О чем вы думаете,\n когда смотрите в небо?"
+            color: 0, 0, 255
+            pos: 50, 350
+            font_size: 24
+
+
+        Button:
+            id: but_next
+            text: "На главную"
+            size_hint: 1, 0.15
+            background_normal: '' # Опустошаем нормальное изображение фона
+            background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            #on_press: root.question()
+            on_release:
+                app.root.current = "first"
+                root.manager.transition.direction = "right"
+
+    GridLayout:
+        cols: 2
+        row_default_height: '100dp'
+        row_force_default: True
+        size_hint_y: 0.7
+
+
+
+
+
+        Button:
+            id: but1
+            text: "Почему так\n шея затекает?"
+            pos: -100, 30
+            background_normal: '' # Опустошаем нормальное изображение фона
+            #background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            color: 0, 0, 255
+            size_hint_x: 1
+            font_size: 24
+            on_press: root.But1()
+
+
+
+
+        Button:
+            id: but2
+            text: "Хочу туда, к звездам!"
+            background_normal: '' # Опустошаем нормальное изображение фона
+            #background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            color: 0, 0, 255
+            size_hint_x: 1
+            orientation: 'vertical'
+            font_size: 24
+            on_press: root.But2()
+
+
+
+<Testwo>:
+    but_next:but_next
+    but1:but1
+    but2:but2
+
+    Image:
+        source: 'космос.webp'
+        anim_delay:
+        size_hint_x: 3.5
+        size_hint_y: 1.3
+        allow_stretch: 2
+        pos: -600, 1
+
+
+    FloatLayout:
+        pos_hint: {'center_x': 0.5, 'center_y': 0.705}
+        size_hint_y: 0.7
+        text_size: 24
+
+        Label:
+            id: label
+            text: "Боязнь высоты\n – это про вас?"
+            color: 0, 0, 255
+            pos: 50, 350
+            font_size: 24
+
+
+        Button:
+            id: but_next
+            text: "На главную"
+            size_hint: 1, 0.15
+            background_normal: '' # Опустошаем нормальное изображение фона
+            background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            #on_press: root.question()
+            on_release:
+                app.root.current = "first"
+                root.manager.transition.direction = "right"
+
+    GridLayout:
+        cols: 2
+        row_default_height: '100dp'
+        row_force_default: True
+        size_hint_y: 0.7
+
+
+        Button:
+            id: but1
+            text: "Жуть!"
+            pos: -100, 30
+            background_normal: '' # Опустошаем нормальное изображение фона
+            #background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            color: 0, 0, 255
+            size_hint_x: 1
+            font_size: 24
+            on_press: root.But1()
+
+        Button:
+            id: but2
+            text: "Я могу повисеть\n даже на чертовом\n колесе"
+            background_normal: '' # Опустошаем нормальное изображение фона
+            #background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            color: 0, 0, 255
+            size_hint_x: 1
+            orientation: 'vertical'
+            font_size: 24
+            pos: 50, 650
+            on_press: root.But2()
+
+<Testhree>:
+    but_next:but_next
+    but1:but1
+    but2:but2
+
+    Image:
+        source: 'космос.webp'
+        anim_delay:
+        size_hint_x: 3.5
+        size_hint_y: 1.3
+        allow_stretch: 2
+        pos: -600, 1
+
+
+    FloatLayout:
+        pos_hint: {'center_x': 0.5, 'center_y': 0.705}
+        size_hint_y: 0.7
+        text_size: 24
+
+        Label:
+            id: label
+            text: "Планета Земля..."
+            color: 0, 0, 255
+            pos: 50, 350
+            font_size: 24
+
+
+        Button:
+            id: but_next
+            text: "На главную"
+            size_hint: 1, 0.15
+            background_normal: '' # Опустошаем нормальное изображение фона
+            background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            #on_press: root.question()
+            on_release:
+                app.root.current = "first"
+                root.manager.transition.direction = "right"
+
+    GridLayout:
+        cols: 2
+        row_default_height: '100dp'
+        row_force_default: True
+        size_hint_y: 0.7
+
+
+        Button:
+            id: but1
+            text: "...круглая"
+            pos: -100, 30
+            background_normal: '' # Опустошаем нормальное изображение фона
+            #background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            color: 0, 0, 255
+            size_hint_x: 1
+            font_size: 24
+            on_press: root.But1()
+
+        Button:
+            id: but2
+            text: "...стоит на трёх\n китах"
+            background_normal: '' # Опустошаем нормальное изображение фона
+            #background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            color: 0, 0, 255
+            size_hint_x: 1
+            orientation: 'vertical'
+            font_size: 24
+            pos: 50, 650
+            on_press: root.But2()
+
+<Testfour>:
+    but_next:but_next
+    but1:but1
+    but2:but2
+
+    Image:
+        source: 'космос.webp'
+        anim_delay:
+        size_hint_x: 3.5
+        size_hint_y: 1.3
+        allow_stretch: 2
+        pos: -600, 1
+
+
+    FloatLayout:
+        pos_hint: {'center_x': 0.5, 'center_y': 0.705}
+        size_hint_y: 0.7
+        text_size: 24
+
+        Label:
+            id: label
+            text: "Как вы поступаете\n в стрессовой ситуации?"
+            color: 0, 0, 255
+            pos: 50, 350
+            font_size: 24
+
+
+        Button:
+            id: but_next
+            text: "На главную"
+            size_hint: 1, 0.15
+            background_normal: '' # Опустошаем нормальное изображение фона
+            background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            #on_press: root.question()
+            on_release:
+                app.root.current = "first"
+                root.manager.transition.direction = "right"
+
+    GridLayout:
+        cols: 2
+        row_default_height: '100dp'
+        row_force_default: True
+        size_hint_y: 0.7
+
+
+        Button:
+            id: but1
+            text: "Строго по\n инструкции"
+            pos: -100, 30
+            background_normal: '' # Опустошаем нормальное изображение фона
+            #background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            color: 0, 0, 255
+            size_hint_x: 1
+            font_size: 24
+            on_press: root.But1()
+
+        Button:
+            id: but2
+            text: "Думаю\n как спасаться"
+            background_normal: '' # Опустошаем нормальное изображение фона
+            #background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            color: 0, 0, 255
+            size_hint_x: 1
+            orientation: 'vertical'
+            font_size: 24
+            pos: 50, 650
+            on_press: root.But2()
+
+<Testfive>:
+    but_next:but_next
+    but1:but1
+    but2:but2
+
+    Image:
+        source: 'космос.webp'
+        anim_delay:
+        size_hint_x: 3.5
+        size_hint_y: 1.3
+        allow_stretch: 2
+        pos: -600, 1
+
+
+    FloatLayout:
+        pos_hint: {'center_x': 0.5, 'center_y': 0.705}
+        size_hint_y: 0.7
+        text_size: 24
+
+        Label:
+            id: label
+            text: "Кто из них\n настоящие космонавты?"
+            color: 0, 0, 255
+            pos: 50, 350
+            font_size: 24
+
+        Button:
+            id: but_next
+            text: "На главную"
+            size_hint: 1, 0.15
+            background_normal: '' # Опустошаем нормальное изображение фона
+            background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            #on_press: root.question()
+            on_release:
+                app.root.current = "first"
+                root.manager.transition.direction = "right"
+
+    GridLayout:
+        cols: 2
+        row_default_height: '100dp'
+        row_force_default: True
+        size_hint_y: 0.7
+
+
+        Button:
+            id: but1
+            text: "Юрий Гагарин"
+            pos: -100, 30
+            background_normal: '' # Опустошаем нормальное изображение фона
+            #background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            color: 0, 0, 255
+            size_hint_x: 1
+            font_size: 24
+            on_press: root.But1()
+
+        Button:
+            id: but2
+            text: "Никоноров Михаил"
+            background_normal: '' # Опустошаем нормальное изображение фона
+            #background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            color: 0, 0, 255
+            size_hint_x: 1
+            orientation: 'vertical'
+            font_size: 24
+            pos: 50, 650
+            on_press: root.But2()
+
+
+<result>:
+    label:label
+    button2:button2
+    but_next:but_next
+    padding:5
+    Image:
+        source: 'космос.webp'
+        size_hint_x: 3.4
+        size_hint_y: 1.3
+        allow_stretch: 2
+        pos: -10, -10
+    FloatLayout:
+        pos_hint: {'center_x': 0.5, 'center_y': 0.705}
+        size_hint_y: 0.7
+
+        Label:
+            id: label
+            text: ""
+            pos: 120, 600
+            size_hint: 0.5, 0.13
+            background_normal: '' # Опустошаем нормальное изображение фона
+            background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            border_color: (0, 0, 0, 1) # Задание цвета границы
+
+        Button:
+            id: button2
+            text: "Результаты теста"
+            pos: 120, 300
+            size_hint: 0.5, 0.13
+            background_normal: '' # Опустошаем нормальное изображение фона
+            background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            border_color: (0, 0, 0, 1) # Задание цвета границы
+            on_press: root.res()
+
+        Button:
+            id: but_next
+            text: "На главную"
+            size_hint: 1, 0.15
+            background_normal: '' # Опустошаем нормальное изображение фона
+            background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            on_release:
+                app.root.current = "first"
+                root.manager.transition.direction = "right"
+
+<resultwo>:
+    label:label
+    button2:button2
+    but_next:but_next
+    padding:5
+    Image:
+        source: 'космос.webp'
+        size_hint_x: 3.4
+        size_hint_y: 1.3
+        allow_stretch: 2
+        pos: -10, -10
+    FloatLayout:
+        pos_hint: {'center_x': 0.5, 'center_y': 0.705}
+        size_hint_y: 0.7
+
+        Label:
+            id: label
+            text: ""
+            pos: 120, 600
+            size_hint: 0.5, 0.13
+            background_normal: '' # Опустошаем нормальное изображение фона
+            background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            border_color: (0, 0, 0, 1) # Задание цвета границы
+
+        Button:
+            id: button2
+            text: "Результаты теста"
+            pos: 120, 300
+            size_hint: 0.5, 0.13
+            background_normal: '' # Опустошаем нормальное изображение фона
+            background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            border_color: (0, 0, 0, 1) # Задание цвета границы
+            on_press: root.res()
+
+        Button:
+            id: but_next
+            text: "На главную"
+            size_hint: 1, 0.15
+            background_normal: '' # Опустошаем нормальное изображение фона
+            background_down: '' # Опустошаем изображение фона при нажатии
+            background_color: (1, 1, 1, 0) # Установка альфа-канала равным 0
+            border: (2, 2, 2, 2) # Задание ширины границы
+            on_release:
+                app.root.current = "first"
+                root.manager.transition.direction = "right"
